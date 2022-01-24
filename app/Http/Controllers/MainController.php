@@ -20,17 +20,17 @@ class MainController extends Controller
         return view('welcome');
     }
     public function redirect(Request $request){
-        return redirect('http://techfest.org/segreta/');
+        return redirect('/');
         $request->session()->reflash();
 //        if(session()->has('admin')){
             return redirect()->route('level',Auth::user()->level,302);
 //        }
-//        else return redirect("https://techfest.org/segreta/login");
+//        else return redirect("/login");
 
     }
     public function levelGet($id){
-        return redirect('http://techfest.org/segreta/');
-        if(Auth::user()->level!=$id) return redirect('http://techfest.org/segreta/redirect');
+        return redirect('/');
+        if(Auth::user()->level!=$id) return redirect('/redirect');
         if(Level::where('level',Auth::user()->level)->count()===0) return "All questions over, please wait for some time!";
         return view('levelGet')->with(['level'=>Level::where('level',Auth::user()->level)->first()]);
     }
@@ -46,7 +46,7 @@ class MainController extends Controller
         return view('leaderboard')->with(['top'=>$top,'positions'=>$userIds]);
     }
     public function leaderBoardGet2(){
-        return redirect('http://techfest.org/segreta/');
+        return redirect('/');
 
         if(session()->has('admin') && (auth()->user()->id==1 || auth()->user()->id==9)) {
             $top = User::orderBy('level','DESC')->orderBy('updated_at','DESC')->take(1500)->get();
@@ -59,7 +59,7 @@ class MainController extends Controller
         return view('leaderboard')->with(['top'=>$top,'positions'=>$userIds]);
     }
     public function levelPost($id,Request $r){
-        return redirect('http://techfest.org/segreta/');
+        return redirect('/');
         if($this->solution($r->answer)){
             Auth::user()->increment('level',1);
             Auth::user()->update(['updated_at' => Carbon::now()]);
@@ -67,7 +67,7 @@ class MainController extends Controller
         }
         else {
             session()->flash('error',$r->answer);
-        return redirect('http://techfest.org/segreta/redirect/');
+        return redirect('/redirect/');
         }
     }
     public function logout(){
@@ -91,10 +91,10 @@ class MainController extends Controller
     }
     public function dark_mode($id){
         User::where(['id'=>$id])->update(['dark_mode'=> "1"]);
-        return redirect('http://techfest.org/segreta/redirect/');
+        return redirect('/redirect/');
     }
     public function disable_dark_mode($id){
         User::where(['id'=>$id])->update(['dark_mode'=> "0"]);
-        return redirect('http://techfest.org/segreta/redirect/');
+        return redirect('/redirect/');
     }
 }

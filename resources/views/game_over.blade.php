@@ -46,7 +46,7 @@
 </head>
 <body>
 <div class="sponsor">
-    <img src="https://techfest.org/segreta/sponsor.png" alt="sponsor" style="width: 150px">
+    <img src="/sponsor.png" alt="sponsor" style="width: 150px">
 </div>
 <main class="h-100 o-auto h-smart">
     <div class="container h-100">

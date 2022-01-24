@@ -10,7 +10,7 @@
     @include('layouts.meta')
 
 
-        <link rel="stylesheet"  href="https://techfest.org/segreta/css/app.css"><style>
+        <link rel="stylesheet"  href="/css/app.css"><style>
         html,body{height: 100%;width: 100%;}.h-smart{height: calc(100% - 2rem) !important;
                                 }@media(min-width:576px){
                                 .h-sm-100{ height: 100%;}

@@ -15,9 +15,9 @@
         <meta property="og:description" content="With 2 days of fierce competition, I ended up on the level {{$user1->level}}, Segreta by Techfest, IIT Bombay! #Segreta #Techfest #Achiever">
         <meta property="og:title" content="{{$user1->name}} was on level {{$user1->level}}">
         <meta property="og:site_name" content="Techfest">
-        <meta property="og:image" content="http://techfest.org/odrb6utl1e/segreta.png">
+        <meta property="og:image" content="//odrb6utl1e/segreta.png">
         <meta property="og:see_also" content="http://m.techfest.org">
-        <link rel="icon" href="http://techfest.org/favicon.png">
+        <link rel="icon" href="//favicon.png">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81222017-1"></script>
         <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-81222017-1');</script>
 
@@ -74,7 +74,7 @@
 </head>
 <body>
 <div class="sponsor">
-{{--    <img src="http://techfest.org/segreta/sponsor.png" alt="sponsor" style="width: 150px">--}}
+{{--    <img src="/sponsor.png" alt="sponsor" style="width: 150px">--}}
 </div>
 <main class="h-100 o-auto h-smart">
     <div class="container h-100">
